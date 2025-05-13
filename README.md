@@ -1,12 +1,56 @@
-# React + Vite
+# POD T-Shirt Customizer 🎨👕
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive React + Vite + Tailwind CSS web app for customizing print-on-demand T-shirts.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚙️ Customize Body Info: Height, Weight, and Build (lean, regular, athletic, big)
+- 🖼️ Image Upload: Drag and drop or file upload with preview (small & regular size)
+- 🧾 Custom Text: Add up to 3 lines of text for printing on T-shirt
+- 🎨 Theme Switching: Use `Alt + Q` to switch between **Light**, **Dark**, and **Colorful** themes
+- 📦 Form management powered by [`react-hook-form`](https://react-hook-form.com/)
+- 💅 Styled using Tailwind CSS
+- 📱 Fully responsive design
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Hook Form](https://react-hook-form.com/)
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd pod-tshirt-customizer
+```
+### 2. Install dependencies
+
+```bash
+npm install
+```
+### 3. Run the dev server
+
+```bash
+npm run dev
+```
+### 4. Build for production
+
+```bash
+npm run build
+```
+### 5. Deploy on Cloudflare Pages or Workers
+
+If using **Cloudflare Pages**:
+- Framework preset: `Vite`
+- Build command: `npm run build`
+- Output directory: `dist`
+
+If using **Cloudflare Workers with Wrangler**, after building:
+
+```bash
+npx wrangler deploy --assets=./dist
+```
