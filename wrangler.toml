@@ -1,6 +1,7 @@
 name = "pod-tshirt-store"
 compatibility_date = "2025-05-13"
 
+main = "workers-site/index.js"  # Instead of site.entry-point
+
 [site]
-bucket = "./dist"
-entry-point = "workers-site/index.js"
+bucket = "./dist"  # Pointing to the dist folder
