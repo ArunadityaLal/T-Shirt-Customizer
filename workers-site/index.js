@@ -1,21 +1,12 @@
-// Import the assets from the dist folder
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
+// workers-site/index.js
+import { getAssetFromKV } from "@cloudflare/kv-asset-handler";
 
-async function handleRequest(request) {
-  // Fetch the file from the dist directory
-  const url = new URL(request.url)
-  const path = url.pathname === "/" ? "/index.html" : url.pathname
-
-  try {
-    const response = await fetch(`./dist${path}`)
-    if (response.ok) {
-      return response
-    } else {
-      return new Response('File not found', { status: 404 })
+export default {
+  async fetch(request, env, ctx) {
+    try {
+      return await getAssetFromKV({ request });
+    } catch (e) {
+      return new Response("Error fetching file", { status: 500 });
     }
-  } catch (err) {
-    return new Response('Error fetching file', { status: 500 })
   }
-}
+};
